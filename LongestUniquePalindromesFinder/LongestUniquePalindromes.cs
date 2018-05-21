@@ -56,7 +56,7 @@ namespace LongestUniquePalindromesFinderNS
         {
             foreach (var item in longestPalindromes)
             {
-                if (item.Palindrome.Contains(candidatePalindrome.Palindrome))
+                if (item.Palindrome.Contains(candidatePalindrome.Palindrome) && item.Palindrome != candidatePalindrome.Palindrome)
                     return true;
             }
 
