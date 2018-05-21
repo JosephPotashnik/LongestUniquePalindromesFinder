@@ -54,11 +54,9 @@ namespace LongestUniquePalindromesFinderNS
         }
         public bool IntervalContains(PalindromeData candidatePalindrome)
         {
-
-            //we check whether there is a longer palindrome whose interval strictly contains the candidate palindrome
             foreach (var item in longestPalindromes)
             {
-                if (candidatePalindrome.Index >= item.Index && candidatePalindrome.Length <= item.Length && (candidatePalindrome.Index + candidatePalindrome.Length) <= (item.Index + item.Length))
+                if (item.Palindrome.Contains(candidatePalindrome.Palindrome))
                     return true;
             }
 

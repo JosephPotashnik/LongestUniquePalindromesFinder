@@ -139,5 +139,19 @@ namespace LongestUniquePalindromesTests
             //TO DO: add to the test all sets of longest unique palindromes.
 
         }
+
+        [Fact]
+        public void TestPalindromeLongestButNotUnique()
+        {
+            string s = "abcba4bcb";
+            var res = LongestUniquePalindromesFinder.GetLongestUniquePalindromes(numberOfPalindromes, s);
+            LongestUniquePalindromes expected = new LongestUniquePalindromes();
+            expected.Add(new PalindromeData(0, 5, "abcba"));
+            expected.Add(new PalindromeData(5, 1, "4"));
+            expected.Add(new PalindromeData(0, 0, string.Empty));
+
+            Assert.Equal(expected.ToString(), res.ToString());
+        }
+
     }
 }

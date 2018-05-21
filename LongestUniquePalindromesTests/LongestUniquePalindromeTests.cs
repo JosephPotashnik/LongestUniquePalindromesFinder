@@ -24,9 +24,7 @@ namespace LongestUniquePalindromesTests
             PalindromeData p = new PalindromeData(0, 3, "abcbacc");
             LongestUniquePalindromes l = new LongestUniquePalindromes();
             l.Add(p);
-            //note: candidate is not a palindrome, but we are interested only in the interval containment
-            //property, for which being palindrome is irrelevant.
-            PalindromeData candidate = new PalindromeData(4, 3, "acc");
+            PalindromeData candidate = new PalindromeData(4, 3, "ada");
             bool expected = l.IntervalContains(candidate);
             Assert.False(expected);
 

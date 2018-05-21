@@ -7,7 +7,7 @@ namespace LongestUniquePalindromesFinderNS
     {
         private static void UpdateLongestPalindromes(LongestUniquePalindromes longestPalindromes, HashSet<string> nonUniquePalindromes, PalindromeData candidatePalindrome)
         {
-            //if the candidate palindrome is strictly contained within another palindrome, it is not unique: continue
+            //if the candidate palindrome is strictly contained within another palindrome, it is not longest, or not unique: continue
             if (longestPalindromes.IntervalContains(candidatePalindrome)) return;
 
             //if the candidate palindrome has already been recognized as not unique, continue.
