@@ -98,4 +98,19 @@ Possible Tests:
 
 Complexity Analysis: We employ an outer loop for decreasing lengths (O(n)), and an inner loop that goes over all partitions in this length (O(n)). The inner loops calls to a function that identifies a palindrome, running in O(n). Overall, Complexity is O(n^3)
 
+## A bugfix
+
+sleeping over the problem, I realized I had missed a case, and that "IntervalContains" is wrong for a specific case.
+
+Take for instance, the string "abcba4bcb".
+
+the second "bcb" is longest (=maximal), since it is not contained in the first "abcba". However, it is not unique, because there is another substring of a different longest palindrome ("abcba") that is identical to it.
+
+In order to correct the bug, I changed the implementation of LongestUniquePalindromes.IntervalContains to use string.Contains() and not to detect if a string is contained within the indices interval of a longer palindrome.
+
+The test case has been added to the unit tests as well.
+
+
+
+
 
